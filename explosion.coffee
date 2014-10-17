@@ -7,16 +7,17 @@ window.onload = ->
       @x = x
       @y = y
       @size = size
+
     update: (dx, dy, dsize) ->
       @x += dx
       @y += dy
       @size -= dsize
 
-  getRan = () -> (Math.random() - 0.5)*8   #2→8#
+  getRan = () -> (Math.random() - 0.5)*8
 
   nPoint = 1000
   points = (new Point(canvas.width/2, canvas.height/2, 5) for i in [0..nPoint])
-  dpoints = ({dx:getRan(), dy:getRan(), dsize:0.04} for i in [0..nPoint])  #0.01→0.04#
+  dpoints = ({dx:getRan(), dy:getRan(), dsize:0.04} for i in [0..nPoint])
 
   drawCircle = (pt) ->
     ctx.beginPath()
@@ -25,6 +26,7 @@ window.onload = ->
 
   update = ->
     ctx.clearRect 0, 0, canvas.width, canvas.height
+ #   ctx.fillStyle = 'rgb(256,0,0)' #色変更#
     drawCircle(i) for i in points
 
     for i in [0..nPoint]

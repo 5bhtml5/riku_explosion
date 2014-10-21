@@ -1,5 +1,0 @@
-(function() {
-  aaaa;
-
-
-}).call(this);
